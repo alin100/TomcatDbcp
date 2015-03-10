@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- 
+
+這是範例設定
+enc text : 透過 java -jar tomcat-dbcp-ext.jar e msg
+
+ -->
+<Context>
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+
+      <Resource
+              name="jdbc/newBill"
+              auth="Container"
+              type="javax.sql.DataSource"
+              driverClassName="oracle.jdbc.OracleDriver"
+              factory="org.apache.tomcat.dbcp.dbcp.ext.EncryptDatasourceFactory"
+              validationQuery="SELECT 1 from dual"
+              maxIdle="2"
+              maxWait="5000"
+              password="E63DA7E3F082F9F2C43953E666F386E6"
+              username="E63DA7E3F082F9F2C43953E666F386E6"
+              url="jdbc:oracle:thin:@192.168.5.37:1521:VMAXPROD"
+              maxActive="10" />      
+    
+</Context>
